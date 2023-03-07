@@ -25,8 +25,12 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 public class User {
 
     // Interfase to createUser and UpdateUser
-    public interface CreateUser {}
-    public interface UpdateUser {}
+    public interface CreateUser {
+
+    }
+    public interface UpdateUser {
+        
+    }
 
     public static final String TABLE_NAME = "user";
 

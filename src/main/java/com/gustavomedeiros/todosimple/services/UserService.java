@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.gustavomedeiros.todosimple.models.User;
-import com.gustavomedeiros.todosimple.repositories.TaskRepository;
 import com.gustavomedeiros.todosimple.repositories.UserRepository;
 
 @Service 
@@ -16,11 +15,6 @@ public class UserService {
     
     @Autowired // Contructor for service and now have access to both
     private UserRepository userRepository;
-
-
-    @Autowired
-    private TaskRepository taskRepository;
-
 
     public User findById(Long id) {
         Optional<User> user = this.userRepository.findById(id);   // Case user does't exist, will return empty
@@ -32,9 +26,8 @@ public class UserService {
 
     @Transactional // Use to Presistent something in the database, to have better control of what is happening in the application
     public User create(User obj) {
-        obj.setId(null); // The new user can create itself with a ID how already exists, so, let make the Id null
+        obj.setId(null); // The new user can create itself with a ID how already exists, so let make the Id null
         obj = this.userRepository.save(obj);
-        this.taskRepository.saveAll(obj.getTasks());
         return obj;
     }
 

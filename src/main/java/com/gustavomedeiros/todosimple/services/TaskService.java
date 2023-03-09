@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.gustavomedeiros.todosimple.models.Task;
 import com.gustavomedeiros.todosimple.models.User;
 import com.gustavomedeiros.todosimple.repositories.TaskRepository;
-import com.gustavomedeiros.todosimple.repositories.UserRepository;
 
 @Service
 public class TaskService {

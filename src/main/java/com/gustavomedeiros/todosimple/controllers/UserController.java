@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+// import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -24,6 +26,7 @@ import com.gustavomedeiros.todosimple.services.UserService;
 
 @RestController
 @RequestMapping("/user")
+// @RequestMapping(value = "/user", method = RequestMethod.GET)
 @Validated // Validate 
 public class UserController {
 
